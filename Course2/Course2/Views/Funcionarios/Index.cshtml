@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Course2.Models.Funcionario>
+<a href="/Funcionarios/Cadastrar" class="btn btn-success">Novo Funcionario</a>
+<br />
+<h2>Todos os Funcionarios</h2>
+
+@foreach (var funcionario in Model)
+{
+<ul class="list-group">
+    <li class="list-group-item">Nome: @funcionario.Nome</li>
+    <li class="list-group-item">CPF: @funcionario.Cpf</li>
+    <li class="list-group-item">Salario: @funcionario.Salario</li>
+    <a href="/Funcionarios/Editar/@funcionario.Id" class="btn btn-primary">Editar</a>
+    <a href="/Funcionarios/Deletar/@funcionario.Id" class="btn btn-danger">Deletar</a>
+</ul>
+    <br />
+}
