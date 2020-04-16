@@ -11,7 +11,11 @@ namespace Course2.Models
         public string Nome { get; set; }
         public virtual Categoria Categoria { get; set; } //Cria um relacionamento entre produto e categoria
 
-       
+        public override string ToString()
+        {
+            return "Id: " + this.Id + " Nome:" + this.Nome + " Categoria: [" + this.Categoria.ToString() + "]";
+        }
+
     }
 }
 
