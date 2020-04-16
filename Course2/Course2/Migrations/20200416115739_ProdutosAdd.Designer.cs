@@ -4,14 +4,16 @@ using Course2.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Course2.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200416115739_ProdutosAdd")]
+    partial class ProdutosAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,22 +57,22 @@ namespace Course2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategoriaId");
-
                     b.Property<string>("Nome");
+
+                    b.Property<int?>("categoriaId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("categoriaId");
 
                     b.ToTable("Produtos");
                 });
 
             modelBuilder.Entity("Course2.Models.Produto", b =>
                 {
-                    b.HasOne("Course2.Models.Categoria", "Categoria")
+                    b.HasOne("Course2.Models.Categoria", "categoria")
                         .WithMany()
-                        .HasForeignKey("CategoriaId");
+                        .HasForeignKey("categoriaId");
                 });
 #pragma warning restore 612, 618
         }
