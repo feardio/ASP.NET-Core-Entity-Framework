@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Course2.Models.Categoria>
+<a href="/Categorias/Cadastrar" class="btn btn-success">Nova Categorias</a>
+<br />
+<h2>Todos as Categorias</h2>
+
+@foreach (var categorias in Model)
+{
+<ul class="list-group">
+    <li class="list-group-item">Id: @categorias.Id</li>
+    <li class="list-group-item">Nome: @categorias.Nome</li>
+    <a href="/Categorias/Editar/@categorias.Id" class="btn btn-primary">Editar</a>
+</ul>
+    <br />
+}

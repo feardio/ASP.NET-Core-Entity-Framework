@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Course2.Models.Produto>
+<a href="/Produtos/Cadastrar" class="btn btn-success">Novo Produto</a>
+<br />
+<h2>Todos os Produtos</h2>
+
+@foreach (var produto in Model)
+{
+    <ul class="list-group">
+        <li class="list-group-item">Nome: @produto.Nome</li>       
+        <a href="/Produtos/Editar/@produto.Id" class="btn btn-primary">Editar</a>
+        <a href="/Produtos/Deletar/@produto.Id" class="btn btn-danger">Deletar</a>
+    </ul>
+    <br />
+}

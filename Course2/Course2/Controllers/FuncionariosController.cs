@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Course2.Models;
 using Course2.Database;
-using System.Linq;
+
 namespace Course2.Controllers
 {
     public class FuncionariosController : Controller
